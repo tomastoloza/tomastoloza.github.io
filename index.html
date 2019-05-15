@@ -1,24 +1,12 @@
-<html>
+<html lang="es">
 <head>
     <title>Tomas Toloza</title>
 </head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Biryani" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"/>
 <style>
-    .presentation img{
-
-        filter: blur(3px);
-        z-index: 1;
-        width: 80%;
-    }
-    .presentation p{
-        font-family: "Josefin Sans";
-        color: white;
-        background: url("https://source.unsplash.com/random") no-repeat center/cover;
-        padding: 2em;
-        font-size: 24px;
-    }
-
     .top-menu {
         font-family: Montserrat, sans-serif;
         float: top;
@@ -32,41 +20,83 @@
         padding: 2em;
         text-decoration: none;
         color: white;
-        transition: 500ms;
+        transition: 200ms;
     }
 
     .top-menu a:hover {
-        padding: 2em;
+        padding: 2em 4em 2em 4em;
         text-decoration: none;
         color: white;
-        background-color: rgb(155, 134, 255);
-        transition: 500ms;
+        font-size: 26px;
+        transition: 200ms;
+    }
+
+    .presentation{
+        background: url("https://source.unsplash.com/random?graffiti") no-repeat center/cover fixed;
+        width: 80%;
+        max-height: 400px;
+    }
+    .presentation p {
+        font-size: 24px;
+        max-height: 500px;
+        margin: 0;
+        text-shadow: 0 0 0 5px black;
+    }
+
+    .presentation .hello{
+        padding: 100px 20px 20px 20px;
+        font-family: Righteous;
+        font-size: 48px;
+        color: white;
+    }
+
+    .presentation .name{
+        padding: 0px 20px 100px 20px;
+        font-family: Righteous;
+        font-size: 156px;
+        color: white;
     }
 
     .right-profile {
+        margin: 0;
         float: right;
         background-color: rgba(127, 94, 255, 1);
-        padding: 10em;
-        width: 10%;
+        padding: 0 0 100px 0;
+        width: 20%;
         text-align: center;
-        height: 300px;
+        max-height: 400px;
     }
-    .right-profile p{
+
+    .right-profile p {
         color: white;
+        font-family: Biryani;
     }
 
     .profile-pic {
+        padding: 0 0 2em 0;
         border-radius: 50%;
         width: 200px;
         height: 200px;
         transition: 500ms;
-        padding: 20px;
-        text-
     }
 
     .profile-pic:hover {
-    transform: scale(1.2);
+        transform: scale(1.5);
         transition: 500ms;
+    }
+
+    .comms a {
+        padding: 0 5px 0 5px;
+        fill: white;
+    }
+
+    .comms img {
+        transition: 200ms;
+    }
+
+    .comms img:hover {
+        transform: scale(1.5);
+        transition: 200ms ease;
     }
 
 </style>
@@ -81,31 +111,20 @@
 </div>
 <div class="right-profile">
     <img src="images/profile-pic.svg" class="profile-pic">
-    <p>Tomas toloza</p>
-    <p>Tomas toloza</p>
-    <p>Tomas toloza</p>
-    <p>Tomas toloza</p>
+    <p>Tomas Toloza<br/>
+        Java Developer for Mulesoft<br/>
+        Buenos Aires, Argentina</p>
+    <div class="comms">
+        <a target="_blank" href="tel:+5491135945012"><img src="images/icon-phone.svg"></a>
+        <a target="_blank" href="mailto:tomasezequieltoloza@gmail.com"><img src="images/icon-email.svg"/></a>
+        <a target="_blank" href="https://www.linkedin.com/in/tomas-toloza/"><img src="images/icon-linkedin.svg"/></a>
+    </div>
 </div>
 <div class="presentation">
 
-    <p>Hi! I'm Tomas Toloza
-        <br/>
-        <br/>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-        dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-        vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-        iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+    <p class="hello">Hello! I'm</p>
+    <p class="name">Tomas Toloza</p>
 
-        Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu
-        ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei,
-        sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus
-        inimicus id.
-
-        His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis
-        deseruisse id. Ullum deleniti vituperata at quo, insolens complectitur te eos, ea pri dico munere propriae. Vel
-        ferri facilis ut, qui paulo ridens praesent ad. Possim alterum qui cu. Accusamus consulatu ius te, cu decore
-        soleat appareat usu.</p>
 </div>
 </body>
 </html>
