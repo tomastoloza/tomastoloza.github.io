@@ -8,7 +8,7 @@
 </head>
 <style>
     .profile-pic {
-        width: 200px;
+        width: 500px;
     }
 
     .banner {
@@ -22,24 +22,11 @@
 
     .comms a {
         padding: 0 5px 0 5px;
-        fill: white;
     }
 
-    .comms img {
-        transition: 200ms;
-        width: 20px;
-        height: 18px;
-    }
-
-    .comms img:hover {
-        transform: scale(1.5);
-        transition: 200ms ease;
-    }
-
-    .presentation {
-        font-family: Montserrat;
-        color: #38598b;
-
+    .comms button {
+        background: none;
+        border: none;
     }
 
     .skills {
@@ -67,16 +54,16 @@
 <div class="front-page row">
     <div class="banner col align-self-center">
         <img class="profile-pic img-fluid" src="images/me.png"/>
-        <div class="presentation">
-            <h1>Tomas Toloza</h1>
-            <p>MTF Developer<br/>
-                Buenos Aires, Argentina</p>
-        </div>
+        <h1 class="display-1">Tomas Toloza</h1>
+        <h4 class="display-4">MTF Developer</h4>
+        <h4 class="display-4">Buenos Aires, Argentina</h4>
         <div class="comms">
-            <a target="_blank" href="tel:+5491135945012"><img src="images/icon-phone.svg"></a>
-            <a target="_blank" href="mailto:tomasezequieltoloza@gmail.com"><img src="images/icon-email.svg"/></a>
-            <a target="_blank" href="https://www.linkedin.com/in/tomas-toloza/"><img
-                    src="images/icon-linkedin.svg"/></a>
+            <button class="btn-lg"><a target="_blank" href="tel:+5491135945012"><img src="images/icon-phone.svg"></a>
+            </button>
+            <button class="btn-lg"><a target="_blank" href="mailto:tomasezequieltoloza@gmail.com"><img
+                    src="images/mail.svg"/></a></button>
+            <button class="btn-lg"><a target="_blank" href="https://www.linkedin.com/in/tomas-toloza/"><img
+                    src="images/icon-linkedin.svg"/></a></button>
         </div>
     </div>
 </div>
@@ -84,7 +71,7 @@
     <div class="skills">
         <div class="employment-icon row">
             <img src="images/svg/Asset 4.svg" alt="" class="col-sm"/>
-            <div class="employment col-sm ">
+            <div class="employment col-sm">
                 <p>2018 - present</p>
                 <p><b>Epidata Consulting</b></p>
                 <p>MTF Developer</p>
