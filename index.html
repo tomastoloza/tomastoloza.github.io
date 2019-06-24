@@ -5,17 +5,21 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900&display=swap" rel="stylesheet">
 </head>
 <style>
     .profile-pic {
-        height: auto;
         max-height: 200px;
         border: 2px #38598b solid;
         border-radius: 50%;
+        box-shadow: 0px 20px 30px #706f9a;
+        margin-bottom: 50px;
     }
 
     .banner {
         text-align: center;
+        font-family: Raleway;
     }
 
     .front-page {
@@ -26,22 +30,26 @@
     .comms{
         padding: 20px;
     }
+
     .comms button {
         background: white;
         transition: 100ms;
         border: 2px #38598b solid;
         border-radius: 50%;
-        height: 50px;
-        width: 50px;
+        margin: 25px;
+        padding: 2%;
     }
 
-    .comms button:hover{
+    .comms button:active{
         transform: scale(1.5);
         transition: 100ms;
 
     }
     .comms svg{
         color: #38598b;
+        height: 40px;
+        width: 40px;
+
     }
 
     .skills {
@@ -49,18 +57,25 @@
         margin-bottom: auto;
     }
 
-    .skills p {
-        font-family: Poppins;
-    }
-
     .second-page{
         background: #e7eaf6;
         height: 100%;
     }
 
-    .row {
-        padding: 2%;
+    .skills {
+        font-family: Poppins;
+        font-size: xx-large;
+        padding: 20px;
     }
+
+    .skills .row {
+        padding: 2%;
+        margin: 100px;
+        background: #cccbf6;
+        border-radius: 10px;
+        box-shadow: 0px 20px 30px #9190bb;
+    }
+
 
 
 </style>
@@ -68,9 +83,8 @@
 <div class="front-page row">
     <div class="banner col align-self-center">
         <img class="profile-pic img-responsive" src="images/me.png"/>
-        <h1 class="display-1">Tomas Toloza</h1>
-        <h4 class="display-4">MTF Developer</h4>
-        <h4 class="display-4">Buenos Aires, Argentina</h4>
+        <h1 class="display-1 font-weight-bold text-uppercase">Tomas Toloza</h1>
+        <h4 class="display-4">developer</h4>
             <div class="comms">
             <button class="btn btn-default"><a target="_blank" href="tel:+5491135945012"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a></button>
             <button class="btn btn-default"><a target="_blank" href="mailto:tomasezequieltoloza@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a></button>
@@ -81,30 +95,13 @@
 <div class="second-page row">
     <div class="skills col align-self-center">
         <div class="row align-items-center">
-            <svg class="col-sm-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.58 38.58"><defs><style>.cls-1{fill:#fff;stroke-miterlimit:10;}.cls-1,.cls-2{stroke:#38598b;stroke-width:2px;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>Asset 4</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><circle class="cls-1" cx="19.29" cy="19.29" r="18.29"/><rect class="cls-2" x="9.29" y="14.29" width="20" height="14" rx="2"/><path class="cls-2" d="M23.29,28.29v-16a2,2,0,0,0-2-2h-4a2,2,0,0,0-2,2v16"/></g></g></svg>
-            <h4 class="col">Employment</h4>
-            <div class="employment col">
-                <p>2018 - present</p>
-                <p><b>Epidata Consulting</b></p>
-                <p>MTF Developer</p>
-            </div>
-            <div class=" col"></div>
-            <div class=" col"></div>
-        </div>
-        <div class="row align-items-center">
-            <svg class="col-sm-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.58 38.58"><defs><style>.cls-1{fill:#fff;stroke-miterlimit:10;}.cls-1,.cls-2{stroke:#38598b;stroke-width:2px;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>Asset 8</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><circle class="cls-1" cx="19.29" cy="19.29" r="18.29"/><path class="cls-2" d="M9.35,11.68h6a4,4,0,0,1,4,4v14a3,3,0,0,0-3-3h-7Z"/><path class="cls-2" d="M29.35,11.68h-6a4,4,0,0,0-4,4v14a3,3,0,0,1,3-3h7Z"/></g></g></svg>
-            <h4 class="col">Education</h4>
-            <div class="col">
-                <p>2017 - present</p>
-                <p><b>Universidad Nacional de Tres De Febrero</b></p>
-                <p>Ingenieria en computacion</p>
-            </div>
-            <div class=" col"></div>
-            <div class=" col"></div>
+            <svg class="col-sm-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.58 38.58"><defs><style>.cls-1{fill:#fff;stroke-miterlimit:10;}.cls-1,.cls-2{stroke:#38598b;stroke-width:2px;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>Asset 8</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><circle class="cls-1" cx="19.29" cy="19.29" r="18.29"/><path class="cls-2" d="M9.35,11.68h6a4,4,0,0,1,4,4v14a3,3,0,0,0-3-3h-7Z"/><path class="cls-2" d="M29.35,11.68h-6a4,4,0,0,0-4,4v14a3,3,0,0,1,3-3h7Z"/></g></g></svg>
+            <div class="col"><p>2017 - present</p></div>
+            <div class=" col"><p><b> <a href="https://www.untref.edu.ar/">UNTREF</a></b></p></div>
+            <div class=" col"><p>Computing engineering</p></div>
         </div>
         <div class=" row align-items-center">
-            <svg class="col-sm-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.58 38.58"><defs><style>.cls-1{fill:#fff;stroke-miterlimit:10;}.cls-1,.cls-2{stroke:#38598b;stroke-width:2px;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>Asset 9</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><circle class="cls-1" cx="19.29" cy="19.29" r="18.29"/><polyline class="cls-2" points="23.29 25.29 29.29 19.29 23.29 13.29"/><polyline class="cls-2" points="15.29 13.29 9.29 19.29 15.29 25.29"/></g></g></svg>
-            <h4 class="col">Coding</h4>
+            <svg class="col-sm-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.58 38.58"><defs><style>.cls-1{fill:#fff;stroke-miterlimit:10;}.cls-1,.cls-2{stroke:#38598b;stroke-width:2px;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>Asset 9</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><circle class="cls-1" cx="19.29" cy="19.29" r="18.29"/><polyline class="cls-2" points="23.29 25.29 29.29 19.29 23.29 13.29"/><polyline class="cls-2" points="15.29 13.29 9.29 19.29 15.29 25.29"/></g></g></svg>
             <div class="col">
                 <p>Java</p>
                 <p>JUnit</p>
@@ -122,12 +119,10 @@
             </div>
         </div>
         <div class=" row align-items-center">
-            <svg class="col-sm-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.58 38.58"><defs><style>.cls-1{fill:#fff;stroke-miterlimit:10;}.cls-1,.cls-2{stroke:#38598b;stroke-width:2px;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>Asset 5</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><circle class="cls-1" cx="19.29" cy="19.29" r="18.29"/><line class="cls-2" x1="11.29" y1="28.29" x2="11.29" y2="21.29"/><line class="cls-2" x1="11.29" y1="17.29" x2="11.29" y2="10.29"/><line class="cls-2" x1="19.29" y1="28.29" x2="19.29" y2="19.29"/><line class="cls-2" x1="19.29" y1="15.29" x2="19.29" y2="10.29"/><line class="cls-2" x1="27.29" y1="28.29" x2="27.29" y2="23.29"/><line class="cls-2" x1="27.29" y1="19.29" x2="27.29" y2="10.29"/><line class="cls-2" x1="8.29" y1="21.29" x2="14.29" y2="21.29"/><line class="cls-2" x1="16.29" y1="15.29" x2="22.29" y2="15.29"/><line class="cls-2" x1="24.29" y1="23.29" x2="30.29" y2="23.29"/></g></g></svg>
-            <h4 class="col">Tools</h4>
+            <svg class="col-sm-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.58 38.58"><defs><style>.cls-1{fill:#fff;stroke-miterlimit:10;}.cls-1,.cls-2{stroke:#38598b;stroke-width:2px;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>Asset 5</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><circle class="cls-1" cx="19.29" cy="19.29" r="18.29"/><line class="cls-2" x1="11.29" y1="28.29" x2="11.29" y2="21.29"/><line class="cls-2" x1="11.29" y1="17.29" x2="11.29" y2="10.29"/><line class="cls-2" x1="19.29" y1="28.29" x2="19.29" y2="19.29"/><line class="cls-2" x1="19.29" y1="15.29" x2="19.29" y2="10.29"/><line class="cls-2" x1="27.29" y1="28.29" x2="27.29" y2="23.29"/><line class="cls-2" x1="27.29" y1="19.29" x2="27.29" y2="10.29"/><line class="cls-2" x1="8.29" y1="21.29" x2="14.29" y2="21.29"/><line class="cls-2" x1="16.29" y1="15.29" x2="22.29" y2="15.29"/><line class="cls-2" x1="24.29" y1="23.29" x2="30.29" y2="23.29"/></g></g></svg>
             <div class=" col">
                 <p>Git</p>
                 <p>Jira</p>
-                <p>Microsoft Office</p>
             </div>
             <div class=" col">
                 <p>GSuite</p>
