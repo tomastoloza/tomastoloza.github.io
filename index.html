@@ -11,15 +11,16 @@
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body onload="save()">
+<script src="index.js"></script>
 <div id="presentation">
-    <div id="profile-pic"><img src="https://github.com/tomastoloza.png" alt=""></div>
+    <div id="profile-pic"><a href="qr.html"><img src="https://github.com/tomastoloza.png" alt=""></a></div>
     <h1>Tomás Toloza</h1>
     <p>
         Hi there 👋<br>
         I'm Tomas from Buenos Aires, Argentina 🇦🇷<br>
-        Student at <a target="_blank" href="http://unahur.edu.ar/">Hurlingham National University</a>
-        and Java developer for <a href="https://www.epidata.net">Epidata</a>
+        CS student at <a target="_blank" href="http://unahur.edu.ar/">Hurlingham National University</a>
+        and Software Engineer AMTS for <a href="https://www.salesforce.com/">Salesforce</a>
         <br>
     </p>
 </div>
@@ -34,15 +35,15 @@
 </div>
 
 <div class="info">
-    <h4>Experience</h4>
+    <h2>Experience</h2>
     <div class="items">
-        <div class="item">
+        <div class="item exp" id="exp-jsd" onclick="loadExperience('exp-jsd')">
             <h4>Java Software Developer</h4>
             <p>Full-time</p>
             <p>Epidata</p>
             <p>Apr 2020 – Present</p>
         </div>
-        <div class="item">
+        <div class="item exp" id="exp-mtf" onclick="loadExperience('exp-mtf')">
             <h4>MTF Developer</h4>
             <p>Full-time</p>
             <p>Epidata</p>
@@ -51,14 +52,14 @@
     </div>
 </div>
 <div class="info">
-    <h4>Education</h4>
+    <h2>Education</h2>
     <div class="items">
         <div class="item">
             <!--        <div><img src="images/unahur-logo.png"></div>-->
             <h4>Licenciatura en Informática</h4>
             <a href="http://unahur.edu.ar/es/licenciatura-en-informatica" target="_blank">Universidad Nacional de
                 Hurlingham</a>
-            <p>2020 – now</p>
+            <p>2020 – now (in progress)</p>
         </div>
         <div class="item">
             <!--        <div><img src="images/untref-logo.png"></div>-->
@@ -66,7 +67,7 @@
             <a href="https://www.untref.edu.ar/carrera/ingenieria-en-computacion" target="_blank">Universidad Nacional
                 de
                 Tres de Febrero</a>
-            <p>2017 – 2020</p>
+            <p>2017 – 2020 (unfinished)</p>
         </div>
     </div>
 
