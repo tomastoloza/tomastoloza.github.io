@@ -9,14 +9,14 @@ body {
     background: var(--blarple);
 }
 
-p, h1, h4 {
+p, h1, h2, h3, h4 {
     color: var(--lili);
     font-family: "Roboto Mono";
     /*text-shadow: 0 0 6px;*/
 }
 
 a {
-    font-family: "Open Sans";
+    font-family: "Roboto Mono";
     color: var(--pinkelo);
     text-decoration: none;
     /*text-shadow: 0 0 6px;*/
@@ -81,11 +81,19 @@ a {
     background: #b9b5dc;
     box-shadow: 35px 35px 70px #9d9abb,
     -35px -35px 70px #d5d0fd;
+    transition: 0.3s;
 }
 
 .item img {
     width: 50px;
     height: 50px;
+}
+
+/*ON hovver*/
+.exp:active {
+    box-shadow: inset 35px 35px 70px #9d9abb,
+    inset -35px -35px 70px #d5d0fd;
+    transition: 0.3s;
 }
 
 .info {
@@ -100,8 +108,14 @@ a {
     z-index: 1;
 }
 
-.items{
+.items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+#qr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
