@@ -35,10 +35,10 @@ const IconBox = styled(Box)(({theme}) => ({
 const Info = () => {
   return <IconBox>
     {
-      infoButtons.map(ib => {
-        return <Link href={ib.href} target={"_blank"}>
-          <IconButton aria-label={ib.label} size={"large"} color={"primary"}>
-            {ib.icon}
+      infoButtons.map(infoButton => {
+        return <Link href={infoButton.href} target={"_blank"} key={infoButton.href}>
+          <IconButton aria-label={infoButton.label} size={"large"} color={"primary"}>
+            {infoButton.icon}
           </IconButton>
         </Link>
       })

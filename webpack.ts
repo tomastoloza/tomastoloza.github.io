@@ -93,4 +93,4 @@ const config = {
   ].filter(Boolean),
 };
 
-module.exports = config;
+export default config;
