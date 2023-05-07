@@ -2,24 +2,27 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from "@mui/material/Typography";
 import {ExperienceItem} from "../../models";
 import {styled} from "@mui/material";
+import BasicModal from "../Modal";
 
 
 interface ExperienceCardProps {
   experienceItem: ExperienceItem;
+  active?: boolean;
 }
 
-export const StyledCard = styled(Card)(({theme}) => ({
-  borderRadius: theme.shape.borderRadius,
-  padding: theme.spacing(2),
-  minWidth: 300,
-  scrollSnapAlign: "start",
-}));
+export const ItemCard = ({experienceItem, active}: ExperienceCardProps) => {
 
-export const ItemCard = ({experienceItem}: ExperienceCardProps) => {
+  const StyledCard = styled(Card)(({theme}) => ({
+    borderRadius: theme.shape.borderRadius,
+    padding: theme.spacing(2),
+    minWidth: 300,
+    scrollSnapAlign: "start",
+    borderColor: active ? theme.palette.primary.main : ""
+  }));
+
   return (
     <StyledCard>
       <CardContent>
@@ -34,7 +37,7 @@ export const ItemCard = ({experienceItem}: ExperienceCardProps) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" disabled>Learn More</Button>
+        <BasicModal title={experienceItem.title} info={experienceItem.info}/>
       </CardActions>
     </StyledCard>
   );

@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import Link from "next/link";
+import Link from "@mui/material/Link";
 
 const AboutMe = () => {
   return <Typography variant={"body1"}>

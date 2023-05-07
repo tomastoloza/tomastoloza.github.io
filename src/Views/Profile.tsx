@@ -8,6 +8,7 @@ import Projects from "./Projects";
 import Qr from "../components/Qr";
 import ContactInfo from "./ContactInfo";
 import AboutMe from "./AboutMe";
+import React from "react";
 
 
 const sections = [
@@ -29,7 +30,7 @@ const sections = [
   },
   {
     children: <Projects/>,
-    label: "Proyects"
+    label: "Projects"
   },
 ]
 
@@ -48,24 +49,25 @@ const ProfilePictureBox = styled(Box)(({theme}) => ({
 }));
 
 const Profile = () => {
-  return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-    <ProfilePictureBox>
-      <Image src="https://github.com/tomastoloza.png" alt={"Profile picture"} fill/>
-    </ProfilePictureBox>
-    <Typography variant={"h1"} fontWeight={800}>Tomás Toloza</Typography>
-    <Qr/>
-    <Box sx={{display: "flex", gap: 4, flexDirection: "column"}}>
-      {
-        sections.map(section => {
-          return <>
-            <Divider>
-              <Chip label={section.label}/>
-            </Divider>
-            {section.children}
-          </>
-        })}
-    </Box>
-  </Box>
+  return (
+    <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", m: 8}}>
+      <ProfilePictureBox>
+        <Image src="https://github.com/tomastoloza.png" alt={"Profile picture"} fill sizes={'100%'}/>
+      </ProfilePictureBox>
+      <Typography variant={"h1"} fontWeight={800} align={"center"}>Tomás Toloza</Typography>
+      <Qr/>
+      <Box sx={{display: "flex", gap: 4, flexDirection: "column"}}>
+        {
+          sections.map(section => {
+            return <React.Fragment key={section.label}>
+              <Divider>
+                <Chip label={section.label}/>
+              </Divider>
+              {section.children}
+            </React.Fragment>
+          })}
+      </Box>
+    </Box>)
 }
 
 export default Profile
