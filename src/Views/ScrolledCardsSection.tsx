@@ -1,28 +1,30 @@
 import {styled} from "@mui/material";
 import Box from "@mui/material/Box";
 import {ItemCard} from "../components";
+import {ExperienceItem} from "../models";
 
 interface ScrolledCardsSectionProps {
   title: string
-  items: any[]
+  items: ExperienceItem[]
 
 }
 
 const ScrollableBox = styled(Box)(({theme}) => ({
   display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "center",
+  // flexWrap: "wrap",
+  justifyContent: "start",
   gap: theme.spacing(2),
-  // [theme.breakpoints.down("md")]: {
-  //   overflowX: "scroll",
-  // },
-  // scrollSnapType: "x mandatory",
-  maxWidth: '100vw',
+  overflowX: "auto",
+  scrollSnapType: "x proximity",
+  maxWidth: "90vw",
+  marginLeft: theme.spacing(2)
 }))
 
 const ScrolledCardsSection = ({title, items}: ScrolledCardsSectionProps) => {
+  let [activeItem, ...restOfItems] = items;
   return <ScrollableBox>
-    {items.map(item => {
+    <ItemCard experienceItem={activeItem} key={activeItem.title} active/>
+    {restOfItems.map(item => {
       return <ItemCard experienceItem={item} key={item.title}/>
     })}
   </ScrollableBox>

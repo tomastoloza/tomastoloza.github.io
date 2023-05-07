@@ -1,10 +1,6 @@
-import Experience from "../Views/Experience";
 import {createTheme, responsiveFontSizes, ThemeProvider} from "@mui/material";
-import Education from "../Views/Education";
-import Info from "../Views/Info";
 import Profile from "../Views/Profile";
 import Head from "next/head";
-import Projects from "../Views/Projects";
 
 const theme = responsiveFontSizes(createTheme({
   shape: {
