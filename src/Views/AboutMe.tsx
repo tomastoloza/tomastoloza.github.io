@@ -5,7 +5,7 @@ import {LocationCity, Place, School, Work} from "@mui/icons-material";
 
 const AboutMe = () => {
   let study = <>CS student at <Link target="_blank" href="https://unahur.edu.ar/">Hurlingham National
-    University</Link> and</>;
+    University</Link></>;
   let work = <>Software Engineer AMTS at <Link target="_blank"
                                                href="https://www.salesforce.com/products/integration/overview/">Mulesoft</Link></>;
   return (
