@@ -4,9 +4,9 @@ import {ItemCard} from "../components";
 import {ExperienceItem} from "../models";
 
 interface ScrolledCardsSectionProps {
-  title: string
-  items: ExperienceItem[]
-
+  title: string;
+  items: ExperienceItem[];
+  hasActions?: boolean;
 }
 
 const ScrollableBox = styled(Box)(({theme}) => ({
@@ -20,12 +20,12 @@ const ScrollableBox = styled(Box)(({theme}) => ({
   marginLeft: theme.spacing(2)
 }))
 
-const ScrolledCardsSection = ({title, items}: ScrolledCardsSectionProps) => {
+const ScrolledCardsSection = ({title, items, hasActions}: ScrolledCardsSectionProps) => {
   let [activeItem, ...restOfItems] = items;
   return <ScrollableBox>
-    <ItemCard experienceItem={activeItem} key={activeItem.title} active/>
+    <ItemCard experienceItem={activeItem} key={activeItem.title} active hasActions={hasActions}/>
     {restOfItems.map(item => {
-      return <ItemCard experienceItem={item} key={item.title}/>
+      return <ItemCard experienceItem={item} key={item.title} hasActions={hasActions}/>
     })}
   </ScrollableBox>
 }
