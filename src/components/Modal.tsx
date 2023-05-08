@@ -29,7 +29,7 @@ export default function BasicModal({title, info}: BasicModalProps) {
     borderRadius: theme.shape.borderRadius,
     position: 'absolute',
     overflowY: 'auto',
-    height: "100vw",
+    height: "fit-content",
     width: "80vw",
     top: '50%',
     left: '50%',
@@ -47,7 +47,7 @@ export default function BasicModal({title, info}: BasicModalProps) {
       >
         <StyledCard>
           <CardContent>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
+            <Typography id="modal-modal-title" variant="h4">
               {title}
             </Typography>
             <Typography id="modal-modal-description" sx={{mt: 2}}>

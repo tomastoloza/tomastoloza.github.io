@@ -11,9 +11,10 @@ import BasicModal from "../Modal";
 interface ExperienceCardProps {
   experienceItem: ExperienceItem;
   active?: boolean;
+  hasActions?: boolean
 }
 
-export const ItemCard = ({experienceItem, active}: ExperienceCardProps) => {
+export const ItemCard = ({experienceItem, active, hasActions}: ExperienceCardProps) => {
 
   const StyledCard = styled(Card)(({theme}) => ({
     borderRadius: theme.shape.borderRadius,
@@ -36,9 +37,9 @@ export const ItemCard = ({experienceItem, active}: ExperienceCardProps) => {
           {experienceItem.from} – {experienceItem.to}
         </Typography>
       </CardContent>
-      <CardActions>
+      {hasActions ? <CardActions>
         <BasicModal title={experienceItem.title} info={experienceItem.info}/>
-      </CardActions>
+      </CardActions> : null}
     </StyledCard>
   );
 }
