@@ -18,7 +18,7 @@ const breakpoints = {
 }
 
 // 3. extend the theme
-const theme = extendTheme({
+export const theme = extendTheme({
   config, breakpoints, fonts: {
     body: "system-ui, sans-serif",
     heading: "Georgia, serif",
@@ -75,6 +75,4 @@ const theme = extendTheme({
     wider: "0.05em",
     widest: "0.1em",
   },
-})
-
-export default theme
+});
