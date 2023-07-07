@@ -1,9 +1,8 @@
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography";
+import {Box, Text} from "@chakra-ui/react";
 
 const Projects = () => {
   return <Box>
-    <Typography variant={"body1"}>Coming soon...</Typography>
+    <Text fontSize="sm">Coming soon...</Text>
   </Box>
 }
 

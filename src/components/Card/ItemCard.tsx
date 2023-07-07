@@ -1,11 +1,23 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from "@mui/material/Typography";
 import {ExperienceItem} from "../../models";
-import {styled} from "@mui/material";
-import BasicModal from "../Modal";
+import {Card, CardBody, CardFooter, CardHeader} from "@chakra-ui/card";
+import {
+  Button,
+  Heading,
+  List,
+  ListIcon,
+  ListItem,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  useDisclosure
+} from "@chakra-ui/react";
+import {GoDotFill} from "react-icons/go";
 
 
 interface ExperienceCardProps {
@@ -15,31 +27,68 @@ interface ExperienceCardProps {
 }
 
 export const ItemCard = ({experienceItem, active, hasActions}: ExperienceCardProps) => {
-
-  const StyledCard = styled(Card)(({theme}) => ({
-    borderRadius: theme.shape.borderRadius,
-    padding: theme.spacing(2),
-    minWidth: 300,
-    scrollSnapAlign: "start",
-    borderColor: active ? theme.palette.primary.main : ""
-  }));
+  const {isOpen, onOpen, onClose} = useDisclosure();
 
   return (
-    <StyledCard>
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+    <Card minWidth={300}
+          scrollSnapAlign={"start"}
+          zIndex={100}
+    >
+      <CardHeader>
+        <Text fontSize="xl" fontWeight={"bold"}>
           {experienceItem.title}
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary">
+        </Text>
+      </CardHeader>
+      <CardBody>
+        <Text fontSize="lg" fontWeight={"semibold"}>
           {experienceItem.company}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
+        </Text>
+        <Text fontSize="md" fontWeight={"light"}>
           {experienceItem.from} – {experienceItem.to}
-        </Typography>
-      </CardContent>
-      {hasActions ? <CardActions>
-        <BasicModal title={experienceItem.title} info={experienceItem.info}/>
-      </CardActions> : null}
-    </StyledCard>
+        </Text>
+      </CardBody>
+      {hasActions && <CardFooter>
+          <Button onClick={onOpen}>View more</Button>
+          <Modal onClose={onClose} isOpen={isOpen} isCentered>
+              <ModalOverlay/>
+              <ModalContent maxWidth={"90vw"}>
+                  <ModalHeader>
+                      <Heading size={"lg"}>
+                        {experienceItem.title}
+                      </Heading>
+                  </ModalHeader>
+                  <ModalCloseButton/>
+                  <ModalBody display="flex" flexDirection={"column"} justifyContent={"center"} gap={8}>
+
+                      <Heading size={"md"}>
+                          Description
+                      </Heading>
+                      <List spacing={3}>
+                        {experienceItem.info && experienceItem.info.descriptionItems.map(item => {
+                          return <ListItem>
+                            <ListIcon as={GoDotFill}/>
+                            {item}
+                          </ListItem>
+                        })}
+                      </List>
+
+                      <Heading size={"md"}>
+                          Skills
+                      </Heading>
+                      <List spacing={3}>
+                        {experienceItem.info && experienceItem.info.skills.map(item => {
+                          return <ListItem>
+                            <ListIcon as={GoDotFill}/>
+                            {item}
+                          </ListItem>
+                        })}
+                      </List>
+
+                  </ModalBody>
+                  <ModalFooter/>
+              </ModalContent>
+          </Modal>
+      </CardFooter>}
+    </Card>
   );
 }
