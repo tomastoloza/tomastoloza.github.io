@@ -32,7 +32,7 @@ export const ItemCard = ({experienceItem, active, hasActions}: ExperienceCardPro
   return (
     <Card minWidth={300}
           scrollSnapAlign={"start"}
-          zIndex={100}
+          key={experienceItem.title}
     >
       <CardHeader>
         <Text fontSize="xl" fontWeight={"bold"}>
@@ -65,7 +65,7 @@ export const ItemCard = ({experienceItem, active, hasActions}: ExperienceCardPro
                       </Heading>
                       <List spacing={3}>
                         {experienceItem.info && experienceItem.info.descriptionItems.map(item => {
-                          return <ListItem>
+                          return <ListItem key={item}>
                             <ListIcon as={GoDotFill}/>
                             {item}
                           </ListItem>
@@ -77,7 +77,7 @@ export const ItemCard = ({experienceItem, active, hasActions}: ExperienceCardPro
                       </Heading>
                       <List spacing={3}>
                         {experienceItem.info && experienceItem.info.skills.map(item => {
-                          return <ListItem>
+                          return <ListItem key={item}>
                             <ListIcon as={GoDotFill}/>
                             {item}
                           </ListItem>

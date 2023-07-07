@@ -9,7 +9,7 @@ const AboutMe = () => {
         Hi there 👋
       </Text>
       <Text align={"center"}>
-        I'm Tomás, based on Buenos Aires, Argentina 🇦🇷.
+        I&apos;m Tomás, based on Buenos Aires, Argentina 🇦🇷.
       </Text>
       <Text align={"center"}>
         A Software Engineer at <Link target="_blank"
@@ -23,15 +23,13 @@ const AboutMe = () => {
       <Text align={"center"}>
         On this website, you will find detailed information about my work experiences, highlighting key projects and
         achievements. Additionally, you can explore my educational background, showcasing the knowledge and expertise
-        I
-        have gained over the years.
+        I have gained over the years.
       </Text>
       <Text align={"center"}>
         I invite you to browse through my portfolio and explore the various sections to learn more about my
         professional
         journey. If you have any questions or would like to discuss potential collaborations, feel free to reach out
-        to
-        me through the provided contact information.
+        to me through the provided contact information.
       </Text>
       <Text align={"center"}>
         Thank you for visiting, and I look forward to connecting with you!

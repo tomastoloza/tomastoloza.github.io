@@ -29,7 +29,7 @@ const sections = [
   },
 ]
 
-export default function () {
+export default function Sections() {
   return <>
     {
       sections.map(section => {
