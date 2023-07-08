@@ -5,9 +5,15 @@ export class ExperienceItem {
   to: string;
   href?: string;
   imageSrc?: string;
-  info: string;
+  info?: {
+    descriptionItems: string[],
+    skills: string[]
+  };
 
-  constructor(title: string, company: string, from: string, to: string,  info: string, href?: string, imageSrc?: string,) {
+  constructor(title: string, company: string, from: string, to: string, info?: {
+    descriptionItems: string[],
+    skills: string[]
+  }, href?: string, imageSrc?: string,) {
     this.title = title;
     this.company = company;
     this.from = from;

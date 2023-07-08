@@ -1,22 +1,13 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import CopyToClipboardTextArea from "../components/CopyToClipboardTextArea";
 import Info from "./Info";
-import {styled} from "@mui/material";
-
-
-const InfoBox = styled(Box)(({theme}) => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.spacing(2),
-  alignItems: "center",
-}));
+import {Box} from "@chakra-ui/react";
 
 const ContactInfo = () => {
-  return <InfoBox>
+  return <Box display="flex" flexDirection="column" alignItems={"center"} gap={2}>
     <CopyToClipboardTextArea value={"tomasezequieltoloza@gmail.com"}/>
     <Info/>
-  </InfoBox>
+  </Box>
 }
 
 export default ContactInfo;
