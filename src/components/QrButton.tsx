@@ -12,10 +12,8 @@ import {
 } from "@chakra-ui/react";
 import QrIcon from "./Icon/QrIcon";
 
-const Qr = () => {
-  const {isOpen, onOpen, onClose} = useDisclosure()
-
-
+const QrButton = () => {
+  const {isOpen, onOpen, onClose} = useDisclosure();
   return <>
     <IconButton aria-label={"QR"} size={"lg"} color={"primary"} onClick={onOpen}>
       <QrIcon/>
@@ -35,4 +33,4 @@ const Qr = () => {
   </>
 }
 
-export default Qr
+export default QrButton

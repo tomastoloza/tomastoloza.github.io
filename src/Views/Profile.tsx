@@ -6,8 +6,7 @@ import Sections from "./Sections";
 
 const Profile = () => {
   return (
-    <Box paddingLeft={[2,4,8]}
-         paddingRight={[2,4,8]} zIndex={1}>
+    <Box padding={[2, 4, 8]}>
       <ProfileLanding/>
       <ProfileActions/>
       <Sections/>

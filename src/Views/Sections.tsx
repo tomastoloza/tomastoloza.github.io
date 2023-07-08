@@ -23,10 +23,10 @@ const sections = [
     children: <Education/>,
     label: "Education"
   },
-  {
-    children: <Projects/>,
-    label: "Projects"
-  },
+  // {
+  //   children: <Projects/>,
+  //   label: "Projects"
+  // },
 ]
 
 export default function Sections() {
