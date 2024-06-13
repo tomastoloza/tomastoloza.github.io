@@ -1,4 +1,4 @@
-import {experienceItems} from "../constants";
+import experienceItems from "../resources/experience.json";
 import React from "react";
 import ScrolledCardsSection from "./ScrolledCardsSection";
 

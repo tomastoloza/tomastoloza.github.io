@@ -8,7 +8,7 @@ interface ScrolledCardsSectionProps {
   hasActions?: boolean;
 }
 
-const ScrolledCardsSection = ({title, items, hasActions}: ScrolledCardsSectionProps) => {
+const ScrolledCardsSection = ({items, hasActions}: ScrolledCardsSectionProps) => {
   let [activeItem, ...restOfItems] = items;
   return <Box display="flex"
               flex={"none"}

@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Software Engineer MTS",
+    "place": "MuleSoft",
+    "from": "Aug 2023",
+    "to": "now",
+    "info": {
+      "descriptionItems": [
+        "Involves designing, implementing, and testing whole new features for connectors.",
+        "Tasks require working closely with the team to ensure features align with customer's needs and place's goals.",
+        "Works with customers to review connectors' behavior, identify and fix bugs.",
+        "Requires excellent communication and collaboration skills to incorporate customer feedback for improving functionality and usability of connectors."
+      ],
+      "skills": [
+        "Strong design and implementation skills",
+        "Proficient in testing new features",
+        "Ability to work collaboratively with a team",
+        "Excellent communication skills",
+        "Attention to detail for bug identification and fixing",
+        "Customer-focused mindset"
+      ]
+    }
+  },
+  {
+    "title": "Software Engineer AMTS",
+    "place": "MuleSoft",
+    "from": "Oct 2021",
+    "to": "Aug 2023",
+    "info": {
+      "descriptionItems": [
+        "Involved in designing, implementing, and testing features for connectors.",
+        "Collaborated closely with the team to ensure features meet customer needs and align with place goals.",
+        "Worked with customers to review connectors' behavior, identify and fix bugs.",
+        "Developed communication and collaboration skills to incorporate feedback for improving functionality and usability of connectors."
+      ],
+      "skills": [
+        "Basic design and implementation skills",
+        "Learning to test new features",
+        "Developing collaboration skills within a team",
+        "Building communication skills",
+        "Attention to detail for bug identification and fixing",
+        "Developing a customer-focused mindset"
+      ]
+    }
+  },
+  {
+    "title": "Java Software Developer",
+    "place": "Epidata",
+    "from": "Apr 2020",
+    "to": "Oct 2021",
+    "info": {
+      "descriptionItems": [
+        "The focus of the role was on maintaining multiple Mulesoft's connectors.",
+        "Performed tasks such as resolving bugs and vulnerabilities, implementing new features, and developing new connectors.",
+        "Worked on developing connectors for various software platforms, including MongoDB, NetSuite, and others."
+      ],
+      "skills": [
+        "Strong experience with Mulesoft's connectors",
+        "Proficient in resolving bugs and vulnerabilities",
+        "Ability to implement new features",
+        "Experience in developing connectors",
+        "Familiarity with MongoDB, NetSuite, and other software platforms"
+      ]
+    }
+  },
+  {
+    "title": "MTF & Munit Developer",
+    "place": "Epidata",
+    "from": "Oct 2018",
+    "to": "Apr 2020",
+    "info": {
+      "descriptionItems": [
+        "Successfully migrated tests of 50+ Mulesoft connectors from Java (JUnit) to MTF, Mulesoft's own testing framework.",
+        "Collaborated with other Mulesoft teams to provide consultation and assistance in developing new tests for future connectors.",
+        "Ensured the testing frameworks for these connectors were robust enough to detect issues before they appeared in production environments."
+      ],
+      "skills": [
+        "Proficient in Mulesoft's testing framework (MTF)",
+        "Good experience with Java and JUnit",
+        "Collaboration and teamwork skills",
+        "Familiarity with SAP, Salesforce, Oracle EBS connectors"
+      ]
+    }
+  }
+]

@@ -1,5 +1,5 @@
 import {AbsoluteCenter, Box, Divider, Tag} from "@chakra-ui/react";
-import React from "react";
+import React, {Fragment} from "react";
 import AboutMe from "./AboutMe";
 import ContactInfo from "./ContactInfo";
 import Experience from "./Experience";
@@ -33,7 +33,7 @@ export default function Sections() {
   return <>
     {
       sections.map(section => {
-        return <>
+        return <Fragment key={section.label}>
           <Box position='relative' p={10}>
             <Divider/>
             <AbsoluteCenter>
@@ -43,7 +43,7 @@ export default function Sections() {
             </AbsoluteCenter>
           </Box>
           {section.children}
-        </>
+        </Fragment>
       })
     }
   </>

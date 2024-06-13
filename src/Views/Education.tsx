@@ -1,4 +1,4 @@
-import {educationItems} from "../constants";
+import educationItems from "../resources/education.json";
 import React from "react";
 import ScrolledCardsSection from "./ScrolledCardsSection";
 

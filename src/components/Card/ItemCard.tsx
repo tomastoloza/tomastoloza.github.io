@@ -41,7 +41,7 @@ export const ItemCard = ({experienceItem, active, hasActions}: ExperienceCardPro
       </CardHeader>
       <CardBody>
         <Text fontSize="lg" fontWeight={"semibold"}>
-          {experienceItem.company}
+          {experienceItem.place}
         </Text>
         <Text fontSize="md" fontWeight={"light"}>
           {experienceItem.from} – {experienceItem.to}
