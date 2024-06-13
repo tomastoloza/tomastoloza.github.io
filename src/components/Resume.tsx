@@ -10,9 +10,19 @@ import {ExperienceItem} from "../models";
 import TooltipButton from "./TooltipButton";
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
-type Content = Array<string | Content | { text: string, style?: string } | { ul?: string[] | Content[] } | {
-  ol?: string[] | Content[]
-}>;
+
+type ContentItem =
+  | string
+  | { text: string; style?: string }
+  | {
+  canvas: { type: string; x1: number; y1: number; x2: number; y2: number; lineWidth: number; lineColor?: string }[]
+}
+  | { ul: string[] }
+  | { ol: string[] }
+  | ContentItem[];
+
+type Content = ContentItem[];
+
 
 function generatePDF(content: Content) {
   // Create a document definition object
@@ -78,15 +88,17 @@ function createPDFContent(experienceData: ExperienceItem[], educationData: Exper
   experienceData.forEach((experience) => {
     content.push({text: experience.title + ` @ ${experience.place}`, style: 'subheader'});
     content.push({text: `${experience.from} - ${experience.to}`, style: 'info'}); // Add from and to
-    content.push({ul: experience.info.descriptionItems, style: "bullet"});
-    content.push({text: 'Skills:', style: 'subheader'});
-    content.push({ul: experience.info.skills, style: "bullet"});
+    if (experience.info) {
+      content.push({ul: experience.info.descriptionItems, style: "bullet"});
+      content.push({text: "Skills:", style: "subheader"});
+      content.push({ul: experience.info.skills, style: "bullet"});
+    }
   });
 
   content.push(hr({color: "black", lineWidth: 2}));
 
-  // Add content for educationData
   content.push({text: 'Education', style: 'header'});
+
   educationData.forEach((education) => {
     content.push({text: education.title + ` @ ${education.place}`, style: 'subheader'});
     content.push({text: `${education.from} - ${education.to}`, style: 'info'}); // Add from and to

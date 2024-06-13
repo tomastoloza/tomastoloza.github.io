@@ -11,7 +11,7 @@ export default function ColorModeToggleButton() {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       toggleColorMode();
     }
-  }, []);
+  });
 
   let isLightMode = colorMode === "light";
   return (

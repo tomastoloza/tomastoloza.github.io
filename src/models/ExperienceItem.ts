@@ -3,8 +3,9 @@ export interface ExperienceItem {
   place: string;
   from: string;
   to: string;
-  info: {
+  info?: {
     descriptionItems: string[];
     skills: string[];
   };
+  link?: string;
 }
