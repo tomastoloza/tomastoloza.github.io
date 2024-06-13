@@ -11,16 +11,16 @@ export default function ColorModeToggleButton() {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       toggleColorMode();
     }
-  });
+  }, []);
 
-  let isLightMode = colorMode === "light";
+  const isLightMode = colorMode === "light";
   return (
     <>
-      <ColorModeScript initialColorMode="system"/>
+      <ColorModeScript initialColorMode={colorMode}/>
       <TooltipButton
         onClick={toggleColorMode}
-        label={"Toggle color mode"}
-        tooltipLabel={"Toggle color mode"}
+        label="Toggle color mode"
+        tooltipLabel="Toggle color mode"
         icon={isLightMode ? <MoonIcon/> : <SunIcon/>}
       />
     </>
