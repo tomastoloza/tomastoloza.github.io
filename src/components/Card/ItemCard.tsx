@@ -15,7 +15,7 @@ export const ItemCard = ({ experienceItem, hasActions }: ExperienceCardProps) =>
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <Card className="min-w-[280px] sm:min-w-[340px] max-w-[380px] flex-shrink-0 flex flex-col justify-between border-neutral-800 bg-neutral-950/70 hover:border-[#ff5500] transition-colors scroll-snap-align-start group">
+    <Card className="w-[300px] sm:w-[340px] flex-shrink-0 flex flex-col justify-between border-neutral-800 bg-neutral-950/70 hover:border-[#ff5500] transition-colors scroll-snap-align-start group">
       <CardHeader className="space-y-1">
         <CardTitle className="text-base font-bold text-white group-hover:text-white pt-1">
           {experienceItem.title}
