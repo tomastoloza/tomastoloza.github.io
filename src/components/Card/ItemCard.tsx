@@ -29,24 +29,40 @@ export const ItemCard = ({ experienceItem, hasActions }: ExperienceCardProps) =>
           </span>
         </div>
       </CardHeader>
-      {hasActions && (
-        <CardFooter className="pt-2">
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full flex items-center justify-between border-neutral-800 hover:border-[#ff5500] hover:text-[#ff5500]"
-            onClick={() => setIsOpen(true)}
-          >
-            <span>DETAILS</span>
-            <ChevronRight className="h-3.5 w-3.5" />
-          </Button>
-          <ExperienceDialog
-            experienceItem={experienceItem}
-            isOpen={isOpen}
-            onOpenChange={setIsOpen}
-          />
-        </CardFooter>
-      )}
+      <CardFooter className="pt-2">
+        {hasActions ? (
+          <>
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full flex items-center justify-between border-neutral-800 hover:border-[#ff5500] hover:text-[#ff5500]"
+              onClick={() => setIsOpen(true)}
+            >
+              <span>DETAILS</span>
+              <ChevronRight className="h-3.5 w-3.5" />
+            </Button>
+            <ExperienceDialog
+              experienceItem={experienceItem}
+              isOpen={isOpen}
+              onOpenChange={setIsOpen}
+            />
+          </>
+        ) : (
+          experienceItem.link && (
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="w-full flex items-center justify-between border-neutral-800 hover:border-[#ff5500] hover:text-[#ff5500]"
+            >
+              <a href={experienceItem.link} target="_blank" rel="noopener noreferrer">
+                <span>VISIT</span>
+                <ChevronRight className="h-3.5 w-3.5" />
+              </a>
+            </Button>
+          )
+        )}
+      </CardFooter>
     </Card>
   )
 }
