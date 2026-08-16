@@ -1,50 +1,24 @@
-import {AbsoluteCenter, Box, Divider, Tag} from "@chakra-ui/react";
-import React, {Fragment} from "react";
-import AboutMe from "./AboutMe";
-import ContactInfo from "./ContactInfo";
-import Experience from "./Experience";
-import Education from "./Education";
-import Projects from "./Projects";
-
-const sections = [
-  {
-    children: <AboutMe/>,
-    label: "About me"
-  },
-  {
-    children: <ContactInfo/>,
-    label: "Contact info"
-  },
-  {
-    children: <Experience/>,
-    label: "Experience"
-  },
-  {
-    children: <Education/>,
-    label: "Education"
-  },
-  // {
-  //   children: <Projects/>,
-  //   label: "Projects"
-  // },
-]
+import React from 'react'
+import { sectionRegistry } from './sectionRegistry'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
 
 export default function Sections() {
-  return <>
-    {
-      sections.map(section => {
-        return <Fragment key={section.label}>
-          <Box position='relative' p={10}>
-            <Divider/>
-            <AbsoluteCenter>
-              <Tag backgroundColor={"purple.300"} p={2}>
+  return (
+    <div className="space-y-12">
+      {sectionRegistry.map((section) => (
+        <div key={section.label} className="space-y-6">
+          <div className="relative flex items-center justify-center py-4">
+            <Separator className="absolute inset-0 m-auto" />
+            <div className="relative z-10 bg-black px-4">
+              <Badge variant="orange" className="px-3 py-1 font-mono tracking-widest text-xs">
                 {section.label}
-              </Tag>
-            </AbsoluteCenter>
-          </Box>
-          {section.children}
-        </Fragment>
-      })
-    }
-  </>
+              </Badge>
+            </div>
+          </div>
+          <section className="space-y-4">{React.createElement(section.Component)}</section>
+        </div>
+      ))}
+    </div>
+  )
 }

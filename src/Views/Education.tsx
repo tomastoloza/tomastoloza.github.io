@@ -1,9 +1,10 @@
-import educationItems from "../resources/education.json";
-import React from "react";
-import ScrolledCardsSection from "./ScrolledCardsSection";
+import { adaptEducationItems } from '@/lib/experience-adapter'
+import ScrolledCardsSection from '../Views/ScrolledCardsSection'
+import React from 'react'
 
 const Education = () => {
-  return <ScrolledCardsSection title={"Education"} items={educationItems} hasActions={false}/>
+  const items = adaptEducationItems()
+  return <ScrolledCardsSection title={"Education"} items={items} hasActions={false} />
 }
 
-export default Education;
+export default Education

@@ -1,10 +1,10 @@
-import experienceItems from "../resources/experience.json";
-import React from "react";
-import ScrolledCardsSection from "./ScrolledCardsSection";
-
+import { adaptExperienceItems } from '@/lib/experience-adapter'
+import ScrolledCardsSection from '../Views/ScrolledCardsSection'
+import React from 'react'
 
 const Experience = () => {
-  return <ScrolledCardsSection title={"Experience"} items={experienceItems} hasActions={true}/>
+  const items = adaptExperienceItems()
+  return <ScrolledCardsSection title={"Experience"} items={items} hasActions={true} />
 }
 
-export default Experience;
+export default Experience
