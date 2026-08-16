@@ -1,17 +1,16 @@
-import React from "react";
-import {Box} from "@chakra-ui/react";
-import ProfileActions from "../components/ProfileActions";
-import ProfileLanding from "../components/ProfileLanding";
-import Sections from "./Sections";
+import React from 'react'
+import ProfileLanding from '@/components/ProfileLanding'
+import ProfileActions from '@/components/ProfileActions'
+import Sections from './Sections'
 
 const Profile = () => {
   return (
-    <Box padding={[2, 4, 8]}>
-      <ProfileLanding/>
-      <ProfileActions/>
-      <Sections/>
-    </Box>
-  );
+    <div className="w-full px-4 sm:px-6 py-10 sm:py-16 space-y-10">
+      <ProfileLanding />
+      <ProfileActions />
+      <Sections />
+    </div>
+  )
 }
 
 export default Profile

@@ -1,94 +1,68 @@
-import * as React from 'react';
-import {ExperienceItem} from "../../models";
-import {Card, CardBody, CardFooter, CardHeader} from "@chakra-ui/card";
-import {
-  Button,
-  Heading,
-  List,
-  ListIcon,
-  ListItem,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Text,
-  useDisclosure
-} from "@chakra-ui/react";
-import {GoDotFill} from "react-icons/go";
-
+import * as React from 'react'
+import { UnifiedExperienceItem } from '@/models/UnifiedExperienceItem'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { ExperienceDialog } from '@/components/Dialog/ExperienceDialog'
+import { ChevronRight } from 'lucide-react'
 
 interface ExperienceCardProps {
-  experienceItem: ExperienceItem;
-  active?: boolean;
+  experienceItem: UnifiedExperienceItem
   hasActions?: boolean
 }
 
-export const ItemCard = ({experienceItem, active, hasActions}: ExperienceCardProps) => {
-  const {isOpen, onOpen, onClose} = useDisclosure();
+export const ItemCard = ({ experienceItem, hasActions }: ExperienceCardProps) => {
+  const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <Card minWidth={300}
-          scrollSnapAlign={"start"}
-          key={experienceItem.title}
-    >
-      <CardHeader>
-        <Text fontSize="xl" fontWeight={"bold"}>
+    <Card className="w-[300px] sm:w-[340px] flex-shrink-0 flex flex-col justify-between border-neutral-800 bg-neutral-950/70 hover:border-[#ff5500] transition-colors scroll-snap-align-start group">
+      <CardHeader className="space-y-1">
+        <CardTitle className="text-base font-bold text-white group-hover:text-white pt-1">
           {experienceItem.title}
-        </Text>
+        </CardTitle>
+        <div className="flex flex-col justify-between gap-2">
+          <Badge variant="secondary" className="text-[10px] text-neutral-400 w-fit">
+            {experienceItem.place}
+          </Badge>
+          <span className="font-mono text-xs text-[#ff5500]">
+            {experienceItem.from} – {experienceItem.to}
+          </span>
+        </div>
       </CardHeader>
-      <CardBody>
-        <Text fontSize="lg" fontWeight={"semibold"}>
-          {experienceItem.place}
-        </Text>
-        <Text fontSize="md" fontWeight={"light"}>
-          {experienceItem.from} – {experienceItem.to}
-        </Text>
-      </CardBody>
-      {hasActions && <CardFooter>
-          <Button onClick={onOpen}>View more</Button>
-          <Modal onClose={onClose} isOpen={isOpen} isCentered>
-              <ModalOverlay/>
-              <ModalContent maxWidth={"90vw"}>
-                  <ModalHeader>
-                      <Heading size={"lg"}>
-                        {experienceItem.title}
-                      </Heading>
-                  </ModalHeader>
-                  <ModalCloseButton/>
-                  <ModalBody display="flex" flexDirection={"column"} justifyContent={"center"} gap={8}>
-
-                      <Heading size={"md"}>
-                          Description
-                      </Heading>
-                      <List spacing={3}>
-                        {experienceItem.info && experienceItem.info.descriptionItems.map(item => {
-                          return <ListItem key={item}>
-                            <ListIcon as={GoDotFill}/>
-                            {item}
-                          </ListItem>
-                        })}
-                      </List>
-
-                      <Heading size={"md"}>
-                          Skills
-                      </Heading>
-                      <List spacing={3}>
-                        {experienceItem.info && experienceItem.info.skills.map(item => {
-                          return <ListItem key={item}>
-                            <ListIcon as={GoDotFill}/>
-                            {item}
-                          </ListItem>
-                        })}
-                      </List>
-
-                  </ModalBody>
-                  <ModalFooter/>
-              </ModalContent>
-          </Modal>
-      </CardFooter>}
+      <CardFooter className="pt-2">
+        {hasActions ? (
+          <>
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full flex items-center justify-between border-neutral-800 hover:border-[#ff5500] hover:text-[#ff5500]"
+              onClick={() => setIsOpen(true)}
+            >
+              <span>DETAILS</span>
+              <ChevronRight className="h-3.5 w-3.5" />
+            </Button>
+            <ExperienceDialog
+              experienceItem={experienceItem}
+              isOpen={isOpen}
+              onOpenChange={setIsOpen}
+            />
+          </>
+        ) : (
+          experienceItem.link && (
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="w-full flex items-center justify-between border-neutral-800 hover:border-[#ff5500] hover:text-[#ff5500]"
+            >
+              <a href={experienceItem.link} target="_blank" rel="noopener noreferrer">
+                <span>VISIT</span>
+                <ChevronRight className="h-3.5 w-3.5" />
+              </a>
+            </Button>
+          )
+        )}
+      </CardFooter>
     </Card>
-  );
+  )
 }

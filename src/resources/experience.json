@@ -1,9 +1,31 @@
 [
   {
+    "title": "Software Engineer SMTS",
+    "place": "MuleSoft",
+    "from": "Aug 2026",
+    "to": "now",
+    "info": {
+      "descriptionItems": [
+        "Leads design and implementation of whole new features for connectors, defining architectural approach and trade-offs.",
+        "Mentors junior engineers and leads code review processes to maintain high quality standards.",
+        "Partners with technical program managers to shape connector strategy and roadmap.",
+        "Represents the team in technical discussions with stakeholders and customers."
+      ],
+      "skills": [
+        "Advanced design and system architecture skills",
+        "Mentoring and team leadership",
+        "Strategic planning and roadmap definition",
+        "Advanced communication and stakeholder management",
+        "Technical decision-making and trade-off analysis",
+        "Cross-team collaboration"
+      ]
+    }
+  },
+  {
     "title": "Software Engineer MTS",
     "place": "MuleSoft",
     "from": "Aug 2023",
-    "to": "now",
+    "to": "Aug 2026",
     "info": {
       "descriptionItems": [
         "Involves designing, implementing, and testing whole new features for connectors.",

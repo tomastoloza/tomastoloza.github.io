@@ -1,47 +1,56 @@
+import React, { useState } from 'react'
 import {
-  Image,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  useDisclosure
-} from "@chakra-ui/react";
-import QrIcon from "./Icon/QrIcon";
-import TooltipButton from "./TooltipButton";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { QrCode } from 'lucide-react'
 
 const QrButton = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <>
-      <TooltipButton
-        icon={<QrIcon />}
-        label="Show QR Code"
-        tooltipLabel="Show QR Code"
-        onClick={onOpen}
-      />
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <DialogTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-10 w-10 border-neutral-800 hover:border-[#ff5500] hover:text-[#ff5500]"
+              aria-label="Show QR Code"
+            >
+              <QrCode className="h-4 w-4" />
+            </Button>
+          </DialogTrigger>
+        </TooltipTrigger>
+        <TooltipContent>SHOW QR CODE</TooltipContent>
+      </Tooltip>
 
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>QR Code for this site</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody display="flex" justifyContent="center">
-            <Image
-              src="/images/qr-tomastoloza-xyz.svg"
-              alt="QR Code"
-              borderRadius="xl"
-              onDragStart={(event) => event.preventDefault()}
-            />
-          </ModalBody>
-          <ModalFooter />
-        </ModalContent>
-      </Modal>
-    </>
-  );
-};
+      <DialogContent className="sm:max-w-md bg-black border-neutral-800">
+        <DialogHeader>
+          <DialogTitle>QR CODE</DialogTitle>
+          <DialogDescription>
+            Scan to open tomastoloza.xyz on your mobile device
+          </DialogDescription>
+        </DialogHeader>
+        <div className="flex items-center justify-center p-4 bg-black border border-neutral-900">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/qr-tomastoloza-xyz.svg"
+            alt="QR Code for tomastoloza.xyz"
+            className="w-56 h-56 object-contain invert"
+            onDragStart={(e) => e.preventDefault()}
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
 
-export default QrButton;
+export default QrButton
